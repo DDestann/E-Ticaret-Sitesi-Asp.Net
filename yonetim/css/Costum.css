@@ -1,0 +1,44 @@
+
+
+.Baslik{ color:#1B6194; text-align: center; }
+.AltBaslik{ color:#FFF; margin-top:-2px; font-weight:bold; }
+.panel-heading-Height{ height:35px;}
+.Tablo-bg{ background-color:#428bca; color:#FFF; }
+.Tablo-width { width:100%
+}
+.pagin{ float:right; }
+.Temizle{ clear:both; margin-top:5px; }
+
+.lable_Color{  color:#180F73; float:left; margin-left:-2px; margin-top:6px; font-weight:bold; font-size:12px;}
+
+
+.Button-Right{float:right; }
+.up_header_bg{ background-image:url(../images/header_bg.png); height:96px; background-repeat:repeat-x; }
+
+
+.User_Profil{ float:right; width:75px; height:75px; margin-right:20px; margin-top:10px;}
+.User_Profil_Name{ float:right; font:"Arial Black", Gadget, sans-serif; color:#FFF; font-size:12px; margin-top:40px; margin-right:-90px;}
+
+.User_Profil_Name2{ float:right; font:"Arial Black", Gadget, sans-serif; color:#FFF; font-size:14px; font-weight:bold; margin-top:10px; margin-right:20px;}
+
+.User_Sing_Out{ float:right; margin-top:60px; margin-right:-100px;}
+
+
+.slidbar_top{ margin-top:100px; }
+
+.Button-Top { margin-top:5px;
+}
+
+.Login_bg {
+    background: url(../login/login_bg.jpg)no-repeat top center ;
+    color:white;
+}
+  .Login-Top {
+            margin-top:175px;
+            
+        }
+.Login-Box-bg {
+    background: url(../login/loginbox_bg.png);
+    height:249px;
+    border-radius:6px;
+}

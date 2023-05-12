@@ -1,0 +1,550 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageSite.master.cs" Inherits="MasterPageSite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+        <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet" />
+
+    <!-- Css Styles -->
+    
+   <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+   <link href="css/elegant-icons.css" rel="stylesheet" />
+   <link href="css/nice-select.css" rel="stylesheet" />
+   <link href="css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/slicknav.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+   
+   
+ 
+
+
+     <script>
+         $(document).ready(function () {
+             $("#myMail").click(function () {
+                 $("#myModalMail").modal();
+             });
+         });
+</script>
+  
+    <script>
+        $(document).ready(function () {
+            $("#myLogin").click(function () {
+                $("#myModal").modal();
+            });
+        });
+</script>
+
+    <script src="js/Whatsapp.js"></script>
+   
+
+
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+
+    <form id="form1" runat="server">
+      
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+
+        <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+        
+    </div>
+
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+
+
+
+
+                   
+                                            <!-- Button to Open the Modal -->
+ 
+
+  <!-- The Modal -->
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header modal-header-Login" style="background: #7fad39;">
+                        <h4 class="modal-title" style="margin-left: 170px; color: white;">Oturum aç</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body was-validated">
+
+
+
+
+                        <div class="form-group">
+
+                            <div class="col-sm-12">
+
+                                <label for="usrname"><span class="fa fa-envelope" aria-hidden="true"></span>&nbsp;E-Mail</label>
+                                <asp:TextBox ID="txtMail" class="form-control" placeholder="Mail" runat="server" TextMode="Email" required></asp:TextBox>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <div class="col-sm-12">
+                                <label for="usrname"><span class="fa fa-key" aria-hidden="true"></span>&nbsp;Şifre</label>
+                                <asp:TextBox ID="txtSifre" class="form-control" placeholder="Şifre" runat="server" TextMode="Password" required></asp:TextBox>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <div class="col-sm-12">
+                                <%--<asp:Button ID="btnGiris" runat="server" class="site-btn" style="float:right" Text="Oturum aç" OnClick="btnGiris_Click" />--%>
+                                <asp:LinkButton ID="btnGiris" runat="server" class="site-btn" Style="float: right; color: white;" OnClick="btnGiris_Click">Oturum Aç</asp:LinkButton>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer" style="float: right;">
+                        <p>
+                            <a href="#" id="myMail" data-dismiss="modal" style="color: black;"><i class="fa fa-key"></i>Şifremi Unuttum </a>
+                        </p>
+                        &nbsp;
+   <p><a href="Kaydol.aspx" style="color: black;"><i class="fa fa-users"></i>Kaydol</a></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+<!-- The Modal-end -->
+
+        <!------The modal unuttum-------->
+        <div class="modal fade" id="myModalMail" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header" style="background: #7fad39;">
+                        <h4 class="modal-title" style="margin-left: 170px; color: white;">Şifremi Unuttum </h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body was-validated">
+
+
+
+
+                        <div class="form-group ">
+
+                            <div class="col-sm-12">
+                                <label for="usrname"><span class="fa fa-envelope" aria-hidden="true"></span>&nbsp;E-Mail</label>
+                                <asp:TextBox ID="txtUMail" class="form-control" placeholder="Mail" runat="server" TextMode="Email" required></asp:TextBox>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <div class="col-sm-12">
+
+                                <asp:LinkButton ID="btnGonder" class="site-btn" Style="float: right; color: white;" runat="server" OnClick="btnGonder_Click">Gönder</asp:LinkButton>
+                                <%--<asp:Button ID="btnGonder" runat="server" class="site-btn" Style="float: right" Text="Gönder" OnClick="btnGonder_Click" />--%>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer" style="float: right;">
+                        <p><a href="#" id="myLogin" data-dismiss="modal" style="color: black;"><i class="fa fa-user"></i>Oturum aç</a></p>
+                        &nbsp;
+   <p><a href="Kaydol.aspx" style="color: black;"><i class="fa fa-users"></i>Kaydol</a></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!------The modal unuttum son-------->
+
+
+        <!-- Button to Open the Modal End -->
+
+
+        <div class="humberger__menu__wrapper">
+            <div class="humberger__menu__logo">
+                <a href="Default.aspx">
+                    <asp:Image ID="LogoMobil" runat="server" /></a>
+            </div>
+         
+            <div class="humberger__menu__widget ">
+
+
+
+                <asp:Panel ID="pnlmobilac" class="header__top__right__auth" runat="server">
+                    <div class="header__top__right__auth">
+                        <a href="#" data-toggle="modal" style="color: black;" data-target="#myModal"><i class="fa fa-user"></i>Oturum aç</a>
+                    </div>
+                    &nbsp;
+                              <div class="header__top__right__auth">
+                                  <a href="Kaydol.aspx" style="color: black;"><i class="fa fa-users"></i>Kaydol</a> <%--Mobil görünüm--%>
+                              </div>
+                </asp:Panel>
+
+                <asp:Panel ID="pnlmobilkapat" Visible="false" class="header__top__right__auth" runat="server">
+                    <div class="header__top__right__auth">
+                        <asp:LinkButton ID="btnmobil" runat="server" Style="color: black;" OnClick="btnCikis_Click"> <i class="fa fa-user"></i>Oturum Kapat</asp:LinkButton>
+                    </div>
+                </asp:Panel>
+
+
+
+            </div>
+
+
+            <div class="humberger__menu__contact">
+                <ul>
+
+                    <li><i class="fa fa-envelope"></i>
+                        <asp:Label ID="lblMail1" Style="color: black;" runat="server" Text=""></asp:Label></li>
+                    <li><i class="fa fa-user"></i>
+                        <asp:Label ID="lblKul1" runat="server" Text=""></asp:Label></li>
+                </ul>
+            </div>
+
+
+            <nav class="humberger__menu__nav mobile-menu">
+                <ul>
+                    <li><a href="Default.aspx">AnaSayfa</a></li>
+                    <li><a href="Kampanya.aspx">Kampanyalar</a></li>
+                    <%--<li><a href="#">Pages</a>
+                    <ul class="header__menu__dropdown">
+                        <li><a href="./shop-details.html">Shop Details</a></li>
+                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                        <li><a href="./checkout.html">Check Out</a></li>
+                        <li><a href="./blog-details.html">Blog Details</a></li>
+                    </ul>
+                </li>--%>
+                    <%--<li><a href="./blog.html">Blog</a></li>--%>
+                    <li><a href="iletisim.aspx">Iletişim</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+            <div class="header__top__right__social">
+                <a  id="MobilFace" runat="server"><i class="fa fa-facebook"></i></a>
+                <a  id="Mobilinst" runat="server"><i class="fa fa-instagram"></i></a>
+               <a  id="MobilYoutube" runat="server"><i class="fa fa-youtube"></i></a>
+            </div>
+
+        </div>
+            
+    <!-- Humberger End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="header__top__left">
+                            <ul>
+                                    <li><i class="fa fa-envelope"></i>
+                                    <asp:Label ID="lblMail" style="color:black;" runat="server" Text=""></asp:Label></li>
+                                <li><i class="fa fa-user"></i>
+                                    <asp:Label ID="lblKul" style="color:black;" runat="server" Text=""></asp:Label></li>
+                               
+ 
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a id="WinFace" runat="server"><i class="fa fa-facebook"></i></a>
+                                <a id="Wininst" runat="server"><i class="fa fa-instagram"></i></a>
+                                <a id="WinYoutube" runat="server"><i class="fa fa-youtube"></i></a>
+                            </div>
+                          
+
+                            <asp:Panel ID="pnlwinac" class="header__top__right__auth" runat="server">
+                                 <div class="header__top__right__auth">
+                                <a href="#" data-toggle="modal" style="color:black;" data-target="#myModal"><i class="fa fa-user"></i>Oturum aç</a>
+                            </div>
+                            &nbsp;
+                              <div class="header__top__right__auth">
+                                  <a href="Kaydol.aspx" style="color:black;"><i class="fa fa-users"></i>Kaydol</a> <%--windows görünüm--%>
+                              </div>
+                            </asp:Panel>
+
+                            <asp:Panel ID="pnlwinkapat" Visible="false" class="header__top__right__auth" runat="server">
+                                <div class="header__top__right__auth">
+                                 <asp:LinkButton ID="btnCikis" runat="server" style="color:black;" OnClick="btnCikis_Click"> <i class="fa fa-user"></i>Oturum Kapat</asp:LinkButton>
+                              </div>
+                            </asp:Panel>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="Default.aspx">
+                            <asp:Image ID="LogoWin" runat="server" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            
+                            <li><a href="Default.aspx">AnaSayfa</a></li>
+                            <li><a href="Kampanya.aspx">Kampanyalar</a></li>
+                          <%--  <li><a href="#">Pages</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="./shop-details.html">Shop Details</a></li>
+                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                    <li><a href="./checkout.html">Check Out</a></li>
+                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./blog.html">Blog</a></li>--%>
+                            <li><a href="iletisim.aspx">Iletişim</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                           
+                                    <li><a href="Profil.aspx"><i class="fa fa-heart"></i><asp:Label ID="lblFav" runat="server" Visible="false" Text=""></asp:Label></a></li>
+                                    <li><a href="Sepetim.aspx"><i class="fa fa-shopping-bag"></i><asp:Label ID="lblSepet" Visible="false" runat="server" Text=""></asp:Label></a></li>
+                              
+                        </ul>
+                        <div class="header__cart__price">
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <asp:Label ID="lblTutar" Visible="false" style="font-size:large;" runat="server" Text=""></asp:Label></div>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero hero-normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Kategoriler</span>
+                        </div>
+                        <ul>
+                            <li><a style="color:black; font:bold;" href="Kampanya.aspx">Kampanyalar</a></li>
+                            <asp:Repeater ID="rptMenu" runat="server">
+                            <ItemTemplate>
+                            <li><a style="color:black; font:bold;" href="<%#Urunler(Eval("KategoriId").ToString(),Eval("KategoriAdi").ToString()) %>"><%#Eval("KategoriAdi").ToString() %></a></li>
+                            </ItemTemplate>
+                            </asp:Repeater>
+                 
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                    
+                                <div class="hero__search__form">
+                            
+
+                            <div class="input-group">
+        <asp:TextBox class="form-control" style="height:50px;" ID="txtAra" placeholder="Ürün Ara" runat="server"></asp:TextBox>
+        <div class="input-group-btn">
+            <%--<asp:Button ID="btnAra" runat="server"  Text="SEARCH" class="site-btn" style="height:50px;" OnClick="btnAra_Click" />--%>
+            <asp:LinkButton ID="btnAra" class="site-btn" style="height:50px;" OnClick="btnAra_Click" runat="server">SEARCH</asp:LinkButton>
+         
+        </div>
+      </div>
+
+                        </div>
+                     
+                     
+                          
+                                <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5 id="HTel" runat="server"> </h5>
+                                <span>
+                                    <asp:Label ID="lblAcilis" style="color:black; font-weight:500;" runat="server" Text=""></asp:Label></span>
+                            </div>
+                        </div>
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+
+    <!-- Categories Section Begin -->
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+
+                <asp:Repeater ID="rptSlaytMenu" runat="server">
+                <ItemTemplate>
+                <div class="col-lg-3">
+                <div style=" width:270px; height:270px; ">
+                        <div class="categories__item set-bg" data-setbg="">
+                            <a style="color:black; font:bold;" href="<%#Urunler(Eval("KategoriId").ToString(),Eval("KategoriAdi").ToString()) %>"><img src="./images/yuklenen/Galeri/kucuk/<%#Eval("ResimYolu") %>"/></a>
+                            <h5><a style="color:black; font:bold;" href="<%#Urunler(Eval("KategoriId").ToString(),Eval("KategoriAdi").ToString()) %>"><%#Eval("KategoriAdi").ToString() %></a></h5>
+                        </div>
+                        </div>
+                    </div>
+                </ItemTemplate>
+                </asp:Repeater>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+       
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+           
+
+        </asp:ContentPlaceHolder>
+
+
+
+
+        <!-- Footer Section Begin -->
+    <footer class="footer spad">
+
+        <a href="https://wa.me/905394111916" target="_blank" rel="noopener noreferrer">
+   <%--WhatsApp--%>
+</a>
+  
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="Default.aspx">
+                                <asp:Image ID="FootLogo" runat="server" /></a>
+                        </div>
+                        <ul>
+                            <li>Adres: <asp:Label ID="lblFootAdres" runat="server" Text=""></asp:Label></li>
+                            <li>İletişim: <asp:Label ID="lblFootiletisim" runat="server" Text=""></asp:Label></li>
+                            <li>Email: <asp:Label ID="lblFootMail" runat="server" Text=""></asp:Label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">About Our Shop</a></li>
+                            <li><a href="#">Secure Shopping</a></li>
+                            <li><a href="#">Delivery infomation</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Who We Are</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <div class="footer__widget__social">
+                            <a id="FootFace" runat="server"><i class="fa fa-facebook"></i></a>
+                            <a id="Footinst" runat="server"><i class="fa fa-instagram"></i></a>
+                            <a id="FootYoutube" runat="server"><i class="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p> <asp:Label ID="lblAltHak" runat="server" Text=""></asp:Label> -- <a id="FootLink" runat="server"> <asp:Label ID="lblFootlink" runat="server" Text=""></asp:Label></a> </p></div>
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+        
+
+
+    </footer>
+    <!-- Footer Section End -->
+
+  
+    </form>
+       <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>
